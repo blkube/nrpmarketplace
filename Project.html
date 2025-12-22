@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#BF5700">
+    <title>NRP Project Summary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: linear-gradient(to bottom, #FFFFFF 0%, #FFF8F5 100%);
+            min-height: 100vh;
+            padding-top: 44px;
+            padding-top: calc(44px + env(safe-area-inset-top));
+            -webkit-overflow-scrolling: touch;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Header */
+        header {
+            position: relative;
+            overflow: hidden;
+            min-height: 80vh;
+            min-height: 80dvh;
+            background: #000;
+        }
+        
+        .header-image {
+            position: absolute;
+            inset: 0;
+        }
+        
+        .header-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .header-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.45) 100%);
+        }
+        
+        .blkube-logo {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 20;
+        }
+        
+        .blkube-logo img {
+            height: 60px;
+            filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3));
+        }
+        
+        .header-content {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            min-height: 80dvh;
+            gap: 2rem;
+        }
+        
+        .header-text {
+            color: white;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .header-text h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8), 0 4px 30px rgba(0,0,0,0.6);
+            margin-bottom: 0;
+            line-height: 1.1;
+        }
+        
+        .header-text p {
+            font-size: clamp(0.875rem, 2.5vw, 2rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        /* Fixed Navigation */
+        .site-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            padding: 0 1.5rem;
+            padding-top: env(safe-area-inset-top);
+            padding-left: calc(1.5rem + env(safe-area-inset-left));
+            padding-right: calc(1.5rem + env(safe-area-inset-right));
+            background: rgba(191, 87, 0, 0.95);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            height: 44px;
+            height: calc(44px + env(safe-area-inset-top));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .site-nav nav {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 44px;
+        }
+        
+        .nav-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #f5f5f7;
+            text-decoration: none;
+            letter-spacing: -0.01em;
+            white-space: nowrap;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1.75rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: #f5f5f7;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0;
+            opacity: 0.85;
+            transition: opacity 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a:active {
+            opacity: 1;
+        }
+        
+        .nav-links a.active {
+            opacity: 1;
+            font-weight: 600;
+        }
+        
+        .nav-cta {
+            background: white;
+            color: #BF5700 !important;
+            padding: 0.35rem 0.9rem;
+            border-radius: 1rem;
+            font-weight: 600 !important;
+            opacity: 1 !important;
+            font-size: 0.7rem !important;
+        }
+        
+        .nav-cta:hover,
+        .nav-cta:active {
+            background: #f5f5f7;
+        }
+        
+        .nav-powered {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            white-space: nowrap;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-powered:hover {
+            color: white;
+            font-weight: 600;
+        }
+        
+        /* Hero CTA */
+        .hero-cta {
+            max-width: 64rem;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .hero-cta-inner {
+            text-align: center;
+            padding: clamp(2rem, 5vw, 4rem);
+            border-radius: 1rem;
+            position: relative;
+            background-image: url('https://i.imgur.com/lmiAMIL.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-cta-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 1rem;
+        }
+        
+        .hero-cta-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-cta h3 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 900;
+            color: white;
+            margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+            text-shadow: 0 4px 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.6);
+        }
+        
+        .hero-button {
+            padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1.5rem, 4vw, 3rem);
+            border-radius: 1rem;
+            font-weight: 900;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            cursor: pointer;
+            background: linear-gradient(135deg, #BF5700 0%, #D96C00 100%);
+            color: white;
+            border: 2px solid white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .hero-button:hover,
+        .hero-button:active {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(191, 87, 0, 0.5);
+        }
+        
+        /* Three Pillars */
+        .pillars-section {
+            padding: clamp(2rem, 5vw, 4rem) 0;
+            background: transparent;
+        }
+        
+        .pillars-container {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 0 1rem;
+            width: 100%;
+        }
+        
+        .pillars-title {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            color: rgba(255, 255, 255, 0.95);
+            text-align: center;
+            margin-bottom: clamp(1.5rem, 3vw, 2rem);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8), 0 4px 20px rgba(0,0,0,0.5);
+        }
+        
+        .pillars-grid {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(1.5rem, 3vw, 3rem);
+            flex-wrap: nowrap;
+        }
+        
+        .pillar {
+            text-align: center;
+        }
+        
+        .pillar h3 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+            transition: transform 0.3s ease;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.9), 0 4px 30px rgba(0,0,0,0.6);
+        }
+        
+        .pillar:hover h3 {
+            transform: scale(1.1);
+        }
+        
+        .pillar p {
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 0.5rem;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+            text-transform: lowercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .pillar-divider {
+            width: 1px;
+            height: clamp(3rem, 6vw, 5rem);
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Container */
+        .container {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+            padding-bottom: calc(3rem + env(safe-area-inset-bottom));
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .stat-card {
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            background: #BF5700;
+            box-shadow: 0 10px 40px rgba(191, 87, 0, 0.3);
+        }
+        
+        .stat-number {
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            font-weight: 900;
+            color: white;
+            margin-top: 1rem;
+        }
+        
+        .stat-label {
+            font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+            text-transform: uppercase;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Funding Cards */
+        .funding-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+        
+        .funding-card {
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            background: linear-gradient(135deg, #FFF5F0 0%, #FFE8DC 100%);
+        }
+        
+        .funding-card-foundation { border: 3px solid #BF5700; }
+        .funding-card-masjid { border: 3px solid #E67E22; }
+        .funding-card-living { border: 3px solid #C0392B; }
+        
+        .funding-title {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: #3a3a3a;
+        }
+        
+        .funding-amount {
+            font-size: clamp(1.5rem, 3vw, 3rem);
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+        
+        .funding-progress-text {
+            font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #999;
+        }
+        
+        .progress-bar {
+            height: 0.75rem;
+            border-radius: 9999px;
+            background: #e5e7eb;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            border-radius: 9999px;
+        }
+        
+        /* Section Titles */
+        .section-title {
+            font-size: clamp(2rem, 5vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #BF5700;
+            letter-spacing: -0.03em;
+        }
+        
+        /* Floor Cards */
+        .floor-card {
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            background: white;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .floor-card:hover,
+        .floor-card:active {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .floor-name {
+            font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+            font-weight: 900;
+        }
+        
+        .floor-location {
+            font-size: clamp(0.875rem, 1.5vw, 1rem);
+            font-weight: 700;
+            margin-top: 0.25rem;
+            opacity: 0.7;
+        }
+        
+        .floor-description {
+            font-size: clamp(0.875rem, 1.5vw, 1rem);
+            font-weight: 500;
+            color: #444;
+            margin: 1rem 0;
+        }
+        
+        .floor-cost {
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+            font-weight: 900;
+        }
+        
+        /* Timeline - Modern Design */
+        .timeline-section {
+            padding: clamp(2rem, 4vw, 3rem) clamp(1rem, 4vw, 2rem);
+            background: #082040;
+            color: white;
+        }
+        
+        .timeline-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-header h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            color: white;
+            margin-bottom: 0;
+            letter-spacing: -0.02em;
+        }
+        
+        .timeline-year-group {
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-year-label {
+            display: inline-block;
+            padding: 0.4rem 1.25rem;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            font-weight: 800;
+            font-size: 0.75rem;
+            border-radius: 2rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        
+        .timeline-year-label.future {
+            background: linear-gradient(135deg, #BF5700 0%, #D96C00 100%);
+            color: white;
+        }
+        
+        .timeline-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 0.75rem;
+        }
+        
+        .timeline-item {
+            background: rgba(255,255,255,0.08);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.15);
+            position: relative;
+        }
+        
+        .timeline-item:hover,
+        .timeline-item:active {
+            background: rgba(255,255,255,0.18);
+            transform: translateY(-4px);
+            border-color: rgba(255,255,255,0.4);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        
+        .timeline-month {
+            font-size: 0.65rem;
+            font-weight: 800;
+            color: #BF5700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.35rem;
+        }
+        
+        .timeline-content h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+            margin: 0;
+            line-height: 1.35;
+        }
+        
+        .timeline-item.milestone {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        
+        .timeline-item.milestone:hover,
+        .timeline-item.milestone:active {
+            background: rgba(255,255,255,0.18);
+            border-color: rgba(255,255,255,0.4);
+        }
+        
+        .timeline-item.milestone .timeline-content h4 {
+            color: white;
+        }
+        
+        .timeline-item.next-milestone {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.35) 0%, rgba(255, 180, 0, 0.2) 100%);
+            border: 2px solid #FFD700;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+            padding: 1rem;
+            animation: tilePulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes tilePulse {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            }
+            50% { 
+                box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+            }
+        }
+        
+        .timeline-item.next-milestone:hover,
+        .timeline-item.next-milestone:active {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.5) 0%, rgba(255, 180, 0, 0.35) 100%);
+            border-color: #FFD700;
+            box-shadow: 0 8px 40px rgba(255, 215, 0, 0.6);
+            transform: translateY(-6px);
+            animation: none;
+        }
+        
+        .timeline-item.next-milestone .timeline-month {
+            color: #FFD700;
+            font-size: 1rem;
+            font-weight: 900;
+        }
+        
+        .timeline-item.next-milestone .timeline-content h4 {
+            color: white;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        
+        .timeline-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #1a1a1a;
+            font-size: 0.7rem;
+            font-weight: 900;
+            padding: 0.4rem 0.8rem;
+            border-radius: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: clamp(2rem, 4vw, 4rem);
+            border-radius: 1rem;
+            background: linear-gradient(135deg, #BF5700 0%, #D96C00 100%);
+        }
+        
+        .cta-title {
+            font-size: clamp(1.5rem, 3vw, 3rem);
+            font-weight: 900;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-text {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 500;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1.5rem, 4vw, 3rem);
+            border-radius: 1rem;
+            font-weight: 900;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            cursor: pointer;
+            background-color: white;
+            color: #BF5700;
+            border: none;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .cta-button:hover,
+        .cta-button:active {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.8);
+            background-color: #f9f9f9;
+        }
+        
+        /* Footer */
+        .site-footer {
+            background: #082040;
+            padding: 2rem 1rem;
+            padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+            text-align: center;
+        }
+        
+        .site-footer a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .site-footer a:hover {
+            color: white;
+        }
+        
+        .site-footer p {
+            color: rgba(255,255,255,0.3);
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+        }
+        
+        /* Mobile - iPhone/iPad */
+        @media (max-width: 768px) {
+            .blkube-logo img {
+                height: 40px !important;
+            }
+            .pillars-grid {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .pillar-divider {
+                display: none;
+            }
+            .site-nav {
+                padding: 0 1rem;
+                padding-left: calc(1rem + env(safe-area-inset-left));
+                padding-right: calc(1rem + env(safe-area-inset-right));
+            }
+            .nav-logo {
+                font-size: 0.75rem;
+            }
+            .nav-links {
+                gap: 0.75rem;
+            }
+            .nav-links a {
+                font-size: 0.6rem;
+            }
+            .nav-cta {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.55rem !important;
+            }
+            .nav-powered {
+                display: none;
+            }
+            .timeline-items {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .timeline-badge {
+                font-size: 0.5rem;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* iPad Landscape */
+        @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+            .header-content {
+                min-height: 70vh;
+            }
+        }
+        
+        /* iPhone SE and smaller */
+        @media (max-width: 375px) {
+            .header-text h1 {
+                font-size: 2.5rem;
+            }
+            .pillar h3 {
+                font-size: 1.75rem;
+            }
+            .nav-links {
+                gap: 0.5rem;
+            }
+            .nav-links a {
+                font-size: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Navigation -->
+    <div class="site-nav">
+        <nav>
+            <a href="index.html" class="nav-logo">Nueces Mosque</a>
+            <div class="nav-links">
+                <a href="index.html">Vision</a>
+                <a href="Project.html" class="active">Project</a>
+                <a href="DonorMarketplace.html">Donor Marketplace</a>
+                <a href="https://www.nuecesmosque.com/reconstruction?utm_source=Newsletter&utm_medium=email&utm_campaign=Stock+&utm_content=Stock+Donation+Newsletter#donate" class="nav-cta" target="_blank">Donate</a>
+            </div>
+            <a href="https://blkube.com" target="_blank" class="nav-powered">Powered by Blkube Studio</a>
+        </nav>
+    </div>
+    
+    <!-- Hero Section -->
+    <header>
+        <div class="header-image">
+            <img src="https://i.imgur.com/puFE42e.jpg" alt="Header" />
+            <div class="header-overlay"></div>
+        </div>
+        
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Nueces Reconstruction Project</h1>
+            </div>
+            
+            <div class="pillars-container">
+                <h2 class="pillars-title">Three Pillars, One Vision</h2>
+                
+                <div class="pillars-grid">
+                    <div class="pillar">
+                        <h3>ibaadah</h3>
+                        <p>worship</p>
+                    </div>
+                    
+                    <div class="pillar-divider"></div>
+                    
+                    <div class="pillar">
+                        <h3>suhba</h3>
+                        <p>companionship</p>
+                    </div>
+                    
+                    <div class="pillar-divider"></div>
+                    
+                    <div class="pillar">
+                        <h3>sakina</h3>
+                        <p>tranquility</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Timeline - Modern -->
+    <div class="timeline-section">
+        <div class="timeline-container">
+            <div class="timeline-header">
+                <h2>Project Timeline</h2>
+            </div>
+            
+            <!-- 2025 -->
+            <div class="timeline-year-group">
+                <div class="timeline-year-label">2025 — Year to Date</div>
+                <div class="timeline-items">
+                    <div class="timeline-item">
+                        <div class="timeline-month">May</div>
+                        <div class="timeline-content">
+                            <h4>Design Development Complete</h4>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-month">June</div>
+                        <div class="timeline-content">
+                            <h4>Site Plan Approval</h4>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-month">July</div>
+                        <div class="timeline-content">
+                            <h4>General Contractor Onboarded</h4>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-month">October</div>
+                        <div class="timeline-content">
+                            <h4>Construction Documents Completed</h4>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-month">November</div>
+                        <div class="timeline-content">
+                            <h4>Temp Prayer Space LOI Secured</h4>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-month">December</div>
+                        <div class="timeline-content">
+                            <h4>Negotiate Lease & Execute Lease for Temp Space</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 2026 -->
+            <div class="timeline-year-group">
+                <div class="timeline-year-label future">2026 — Path to Construction</div>
+                <div class="timeline-items">
+                    <div class="timeline-item next-milestone">
+                        <div class="timeline-badge">Next Critical Milestone</div>
+                        <div class="timeline-month">January</div>
+                        <div class="timeline-content">
+                            <h4>Move into temp prayer space</h4>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-month">March</div>
+                        <div class="timeline-content">
+                            <h4>Demo of Brother's Activity Center</h4>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-month">April</div>
+                        <div class="timeline-content">
+                            <h4>Demo of 1906 Nueces</h4>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-month">May</div>
+                        <div class="timeline-content">
+                            <h4>Demo of Sisters Activity Center</h4>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-month">June</div>
+                        <div class="timeline-content">
+                            <h4>Demo of 1908 Nueces</h4>
+                        </div>
+                    </div>
+                    <div class="timeline-item milestone">
+                        <div class="timeline-month">July</div>
+                        <div class="timeline-content">
+                            <h4>Begin foundation work and envelope erection of Masjid & Community Center</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                    <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <div class="stat-number">77,315</div>
+                <div class="stat-label">Total Sq Ft</div>
+            </div>
+            <div class="stat-card">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+                <div class="stat-number">6</div>
+                <div class="stat-label">Floors</div>
+            </div>
+            <div class="stat-card">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <div class="stat-number">36</div>
+                <div class="stat-label">Residential Units</div>
+            </div>
+        </div>
+        
+        <!-- Funding Progress -->
+        <div class="funding-grid">
+            <div class="funding-card funding-card-foundation">
+                <h4 class="funding-title">Building Foundation</h4>
+                <div class="funding-amount" style="color: #BF5700;">$2,954,674</div>
+                <div class="funding-progress-text">83% funds raised</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 83%; background: linear-gradient(90deg, #BF5700 0%, #D96C00 100%);"></div>
+                </div>
+            </div>
+            <div class="funding-card funding-card-masjid">
+                <h4 class="funding-title">Masjid + Dawah Center</h4>
+                <div class="funding-amount" style="color: #E67E22;">$7,922,162</div>
+                <div class="funding-progress-text">12% funds raised</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 12%; background: linear-gradient(90deg, #E67E22 0%, #F39C12 100%);"></div>
+                </div>
+            </div>
+            <div class="funding-card funding-card-living">
+                <h4 class="funding-title">Spiritual Student Living</h4>
+                <div class="funding-amount" style="color: #C0392B;">$12,123,164</div>
+                <div style="font-size: clamp(0.875rem, 1.5vw, 1rem); font-weight: 600; padding-top: 1rem; color: #666;">Contact for investment opportunities</div>
+            </div>
+        </div>
+        
+        <!-- Floor by Floor -->
+        <h3 class="section-title">floor by floor</h3>
+        <div style="margin-bottom: 4rem;">
+            <div class="floor-card" style="border: 2px solid #BF5700;">
+                <div class="floor-name" style="color: #BF5700;">Masjid</div>
+                <div class="floor-location" style="color: #BF5700;">1F | 6,104 SF</div>
+                <div class="floor-description">Lobby, Prayer Hall, Offices, Amenities</div>
+                <div class="floor-cost" style="color: #BF5700;">$3,647,098</div>
+            </div>
+            
+            <div class="floor-card" style="border: 2px solid #E67E22;">
+                <div class="floor-name" style="color: #E67E22;">Dawah & Community Center</div>
+                <div class="floor-location" style="color: #E67E22;">2F | 7,155 SF</div>
+                <div class="floor-description">Multi-Purpose Hall, Library, Classrooms, Kitchen</div>
+                <div class="floor-cost" style="color: #E67E22;">$4,275,064</div>
+            </div>
+            
+            <div class="floor-card" style="border: 2px solid #C0392B;">
+                <div class="floor-name" style="color: #C0392B;">Brothers | Spiritual Student Living</div>
+                <div class="floor-location" style="color: #C0392B;">3F & 4F | 25,088 SF</div>
+                <div class="floor-description">18 Units + Terrace, Lounge, Gym</div>
+                <div class="floor-cost" style="color: #C0392B;">$6,215,178</div>
+            </div>
+            
+            <div class="floor-card" style="border: 2px solid #1B4F72;">
+                <div class="floor-name" style="color: #1B4F72;">Sisters | Spiritual Student Living</div>
+                <div class="floor-location" style="color: #1B4F72;">5F & 6F | 23,848 SF</div>
+                <div class="floor-description">18 Units + Lounge, Gym</div>
+                <div class="floor-cost" style="color: #1B4F72;">$5,907,986</div>
+            </div>
+        </div>
+        
+        <!-- CTA -->
+        <div class="cta-section">
+            <h3 class="cta-title">Secure Your Akhira</h3>
+            <p class="cta-text">Gift a prayer spot and earn rewards for every salah prayed in your name — for generations to come.</p>
+            <a href="DonorMarketplace.html" class="cta-button">Gift a Prayer Spot</a>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <a href="https://blkube.com" target="_blank">Powered by Blkube Studio</a>
+        <p>Transforming Hearts. One Space at a Time.</p>
+    </footer>
+</body>
+</html>
