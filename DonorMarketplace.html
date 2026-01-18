@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#BF5700">
-    <title>Donor Marketplace - Nueces Mosque</title>
+    <title>Donor Marketplace - Prayer Hall</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700;900&family=Montserrat:wght@300;500;700;900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <style>
         html {
@@ -674,7 +674,6 @@
         @media (max-width: 768px) {
             .hero-banner {
                 min-height: 100vh;
-                min-height: 100dvh;
             }
         }
         
@@ -726,7 +725,6 @@
             align-items: center;
             justify-content: center;
             padding: 5rem 2rem 2rem 2rem;
-            padding-top: calc(5rem + env(safe-area-inset-top));
             text-align: center;
         }
         
@@ -747,13 +745,6 @@
             min-width: 420px;
             display: inline-block;
             text-align: center;
-        }
-        
-        @media (max-width: 480px) {
-            .hero-badge {
-                min-width: auto;
-                padding: 0.75rem 1.5rem;
-            }
         }
         
         /* CTA Buttons */
@@ -783,11 +774,9 @@
             background: linear-gradient(135deg, #BF5700 0%, #D96C00 100%);
             color: white;
             box-shadow: 0 8px 30px rgba(191, 87, 0, 0.4);
-            -webkit-tap-highlight-color: transparent;
         }
         
-        .cta-btn:hover,
-        .cta-btn:active {
+        .cta-btn:hover {
             transform: translateY(-4px) scale(1.02);
             background: white;
             color: #BF5700;
@@ -998,16 +987,6 @@
             font-family: 'Montserrat', sans-serif;
         }
         
-        @media (max-width: 600px) {
-            .donor-item {
-                grid-template-columns: 1fr 1fr;
-                gap: 0.5rem;
-            }
-            .donor-note {
-                grid-column: 1 / -1;
-            }
-        }
-        
         .donor-item:last-child {
             border-bottom: none;
         }
@@ -1059,7 +1038,7 @@
         
         .progress-container {
             margin-top: 1rem;
-            min-width: 280px;
+            min-width: 380px;
             max-width: 450px;
             margin-left: auto;
             margin-right: auto;
@@ -1210,7 +1189,6 @@
             position: relative;
             overflow: hidden;
             font-family: 'Montserrat', sans-serif;
-            -webkit-tap-highlight-color: transparent;
         }
         
         .cta-icon-img {
@@ -1251,8 +1229,7 @@
             box-shadow: 0 10px 40px rgba(191, 87, 0, 0.3);
         }
         
-        .primary-cta:hover,
-        .primary-cta:active {
+        .primary-cta:hover {
             background: white;
             color: #BF5700;
             transform: translateY(-4px);
@@ -1271,8 +1248,7 @@
             box-shadow: 0 10px 40px rgba(191, 87, 0, 0.3);
         }
         
-        .secondary-cta:hover,
-        .secondary-cta:active {
+        .secondary-cta:hover {
             background: white;
             color: #BF5700;
             transform: translateY(-4px);
@@ -1321,7 +1297,7 @@
             transition: all 0.3s ease;
             box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
             animation: bounce 2s ease-in-out infinite;
-            min-width: 280px;
+            min-width: 380px;
         }
         
         @keyframes bounce {
@@ -1471,10 +1447,6 @@
                 max-height: 300px;
                 overflow: hidden;
             }
-            
-            .story-container {
-                padding: 0 1rem;
-            }
         }
         
         .story-badge {
@@ -1604,11 +1576,9 @@
             font-weight: 700;
             text-decoration: none;
             transition: all 0.3s ease;
-            -webkit-tap-highlight-color: transparent;
         }
         
-        .sponsor-card-btn:hover,
-        .sponsor-card-btn:active {
+        .sponsor-card-btn:hover {
             background: #BF5700;
             color: white;
         }
@@ -1698,7 +1668,6 @@
             box-shadow: 0 10px 30px rgba(191, 87, 0, 0.4);
             position: relative;
             overflow: hidden;
-            -webkit-tap-highlight-color: transparent;
         }
         
         .story-donate-btn::before {
@@ -1723,8 +1692,7 @@
             50%, 100% { left: 150%; }
         }
         
-        .story-donate-btn:hover,
-        .story-donate-btn:active {
+        .story-donate-btn:hover {
             transform: translateY(-4px);
             box-shadow: 0 15px 45px rgba(191, 87, 0, 0.5);
         }
@@ -1996,11 +1964,9 @@
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(191, 87, 0, 0.4);
-            -webkit-tap-highlight-color: transparent;
         }
         
-        .showcase-donate-btn:hover,
-        .showcase-donate-btn:active {
+        .showcase-donate-btn:hover {
             transform: translateY(-4px);
             box-shadow: 0 15px 40px rgba(191, 87, 0, 0.5);
         }
@@ -2034,9 +2000,6 @@
             overflow-x: hidden;
             background: #FFF8F5;
             padding-top: 44px;
-            padding-top: calc(44px + env(safe-area-inset-top));
-            -webkit-overflow-scrolling: touch;
-            -webkit-tap-highlight-color: transparent;
         }
         
         .bg-image {
@@ -2065,14 +2028,10 @@
             right: 0;
             z-index: 9999;
             padding: 0 1.5rem;
-            padding-top: env(safe-area-inset-top);
-            padding-left: calc(1.5rem + env(safe-area-inset-left));
-            padding-right: calc(1.5rem + env(safe-area-inset-right));
             background: rgba(191, 87, 0, 0.95);
             backdrop-filter: saturate(180%) blur(20px);
             -webkit-backdrop-filter: saturate(180%) blur(20px);
             height: 44px;
-            height: calc(44px + env(safe-area-inset-top));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -2084,7 +2043,201 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 44px;
+            height: 100%;
+        }
+        
+        .nav-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #f5f5f7;
+            text-decoration: none;
+            letter-spacing: -0.01em;
+            white-space: nowrap;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1.75rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: #f5f5f7;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0;
+            opacity: 0.85;
+            transition: opacity 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .nav-links a:hover {
+            opacity: 1;
+        }
+        
+        /* Dropdown */
+        .nav-dropdown {
+            position: relative;
+        }
+        
+        .nav-dropdown-trigger {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .dropdown-arrow {
+            font-size: 0.6rem;
+            transition: transform 0.2s ease;
+        }
+        
+        .nav-dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+        
+        .nav-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 0.75rem;
+            background: rgba(191, 87, 0, 0.98);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-radius: 0.75rem;
+            padding: 0.5rem;
+            min-width: 280px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-dropdown:hover .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .nav-dropdown-menu a {
+            display: block;
+            padding: 0.6rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.7rem;
+            white-space: nowrap;
+        }
+        
+        .nav-dropdown-menu a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Powered by */
+        .nav-powered {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            white-space: nowrap;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-powered:hover {
+            color: white;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        .site-footer {
+            background: #082040;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        
+        .footer-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-brand:hover {
+            color: white;
+        }
+        
+        .footer-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 0.5rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+        }
+        
+        .nav-cta {
+            background: white;
+            color: #BF5700 !important;
+            padding: 0.35rem 0.9rem;
+            border-radius: 1rem;
+            font-weight: 600 !important;
+            opacity: 1 !important;
+            font-size: 0.7rem !important;
+        }
+        
+        .nav-cta:hover {
+            background: #f5f5f7;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 0 1rem;
+            }
+            
+            .nav-logo {
+                font-size: 0.75rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .nav-links a {
+                font-size: 0.65rem;
+            }
+            
+            .nav-dropdown-menu {
+                min-width: 220px;
+            }
+            
+            .nav-cta {
+                padding: 0.3rem 0.7rem;
+                font-size: 0.6rem !important;
+            }
+            
+            .nav-powered {
+                font-size: 0.65rem;
+            }
+        }
+        
+        @media (max-width: 540px) {
+            .nav-dropdown-trigger span.dropdown-arrow {
+                display: none;
+            }
+            
+            .nav-powered {
+                display: none;
+            }
+        }
+        
+        /* Container */
+        .container {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: clamp(2rem, 4vw, 4rem) 1rem;
         }
         
         /* Room Grid */
@@ -2121,6 +2274,102 @@
             background: #f3f4f6;
             overflow: hidden;
             position: relative;
+        }
+        
+        /* Image Slider Styles */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            overflow: hidden;
+        }
+        
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+        
+        .slider-image {
+            min-width: 100%;
+            height: 100%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(191, 87, 0, 0.9);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+        }
+        
+        .slider-nav:hover {
+            background: rgba(191, 87, 0, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .slider-nav-prev {
+            left: 1rem;
+        }
+        
+        .slider-nav-next {
+            right: 1rem;
+        }
+        
+        .slider-indicators {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            z-index: 5;
+        }
+        
+        .slider-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid #BF5700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .slider-indicator.active {
+            background: #BF5700;
+            transform: scale(1.2);
+        }
+        
+        .slider-image-label {
+            position: absolute;
+            bottom: 4rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(191, 87, 0, 0.95);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 700;
+            z-index: 5;
+            backdrop-filter: blur(4px);
         }
         
         .featured-image img {
@@ -2209,11 +2458,9 @@
             font-size: clamp(1rem, 2vw, 1.125rem);
             cursor: pointer;
             transition: transform 0.3s ease;
-            -webkit-tap-highlight-color: transparent;
         }
         
-        .view-details-btn:hover,
-        .view-details-btn:active {
+        .view-details-btn:hover {
             transform: scale(1.02);
         }
         
@@ -2227,8 +2474,7 @@
             cursor: pointer;
         }
         
-        .room-card:hover,
-        .room-card:active {
+        .room-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
@@ -2305,11 +2551,9 @@
             font-size: clamp(0.875rem, 1.5vw, 1rem);
             cursor: pointer;
             transition: transform 0.3s ease;
-            -webkit-tap-highlight-color: transparent;
         }
         
-        .room-btn:hover,
-        .room-btn:active {
+        .room-btn:hover {
             transform: scale(1.02);
         }
         
@@ -2420,7 +2664,6 @@
             border-radius: 0.75rem;
             cursor: pointer;
             flex-shrink: 0;
-            -webkit-tap-highlight-color: transparent;
         }
         
         .modal-close span {
@@ -2592,205 +2835,6 @@
             font-weight: 600;
         }
         
-        .nav-logo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: #f5f5f7;
-            text-decoration: none;
-            letter-spacing: -0.01em;
-            white-space: nowrap;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 1.75rem;
-            align-items: center;
-        }
-        
-        .nav-links a {
-            color: #f5f5f7;
-            text-decoration: none;
-            font-size: 0.75rem;
-            font-weight: 400;
-            letter-spacing: 0;
-            opacity: 0.85;
-            transition: opacity 0.3s ease;
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .nav-links a:hover,
-        .nav-links a:active {
-            opacity: 1;
-        }
-        
-        /* Dropdown */
-        .nav-dropdown {
-            position: relative;
-        }
-        
-        .nav-dropdown-trigger {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-        }
-        
-        .dropdown-arrow {
-            font-size: 0.6rem;
-            transition: transform 0.2s ease;
-        }
-        
-        .nav-dropdown:hover .dropdown-arrow {
-            transform: rotate(180deg);
-        }
-        
-        .nav-dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            margin-top: 0.75rem;
-            background: rgba(191, 87, 0, 0.98);
-            backdrop-filter: saturate(180%) blur(20px);
-            -webkit-backdrop-filter: saturate(180%) blur(20px);
-            border-radius: 0.75rem;
-            padding: 0.5rem;
-            min-width: 280px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.2s ease, visibility 0.2s ease;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        }
-        
-        .nav-dropdown:hover .nav-dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .nav-dropdown-menu a {
-            display: block;
-            padding: 0.6rem 1rem;
-            border-radius: 0.5rem;
-            font-size: 0.7rem;
-            white-space: nowrap;
-        }
-        
-        .nav-dropdown-menu a:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Powered by */
-        .nav-powered {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.5);
-            white-space: nowrap;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-powered:hover {
-            color: white;
-            font-weight: 600;
-        }
-        
-        /* Footer */
-        .site-footer {
-            background: #082040;
-            padding: 2rem 1rem;
-            padding-bottom: calc(2rem + env(safe-area-inset-bottom));
-            text-align: center;
-        }
-        
-        .footer-brand {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        
-        .footer-brand:hover {
-            color: white;
-        }
-        
-        .footer-tagline {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.4);
-            margin-top: 0.5rem;
-            font-weight: 400;
-            letter-spacing: 0.05em;
-        }
-        
-        .nav-cta {
-            background: white;
-            color: #BF5700 !important;
-            padding: 0.35rem 0.9rem;
-            border-radius: 1rem;
-            font-weight: 600 !important;
-            opacity: 1 !important;
-            font-size: 0.7rem !important;
-        }
-        
-        .nav-cta:hover,
-        .nav-cta:active {
-            background: #f5f5f7;
-        }
-        
-        @media (max-width: 768px) {
-            header {
-                padding: 0 1rem;
-                padding-left: calc(1rem + env(safe-area-inset-left));
-                padding-right: calc(1rem + env(safe-area-inset-right));
-            }
-            
-            .nav-logo {
-                font-size: 0.75rem;
-            }
-            
-            .nav-links {
-                gap: 1rem;
-            }
-            
-            .nav-links a {
-                font-size: 0.65rem;
-            }
-            
-            .nav-dropdown-menu {
-                min-width: 220px;
-            }
-            
-            .nav-cta {
-                padding: 0.3rem 0.7rem;
-                font-size: 0.6rem !important;
-            }
-            
-            .nav-powered {
-                font-size: 0.65rem;
-            }
-        }
-        
-        @media (max-width: 540px) {
-            .nav-dropdown-trigger span.dropdown-arrow {
-                display: none;
-            }
-            
-            .nav-powered {
-                display: none;
-            }
-        }
-        
-        /* Container */
-        .container {
-            max-width: 80rem;
-            margin: 0 auto;
-            padding: clamp(2rem, 4vw, 4rem) 1rem;
-        }
-        
         /* Lightbox */
         .lightbox {
             display: none;
@@ -2853,21 +2897,6 @@
             opacity: 1;
             visibility: visible;
         }
-        
-        /* iPhone SE and smaller */
-        @media (max-width: 375px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            .cta-btn {
-                min-width: 150px;
-                min-height: 180px;
-            }
-            .cta-btn-icon {
-                width: 70px;
-                height: 70px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -2885,12 +2914,13 @@
                 <a href="index.html">Vision</a>
                 <a href="Project.html">Project</a>
                 <div class="nav-dropdown">
-                    <a href="#catalogue" class="nav-dropdown-trigger">Donor Marketplace <span class="dropdown-arrow">▾</span></a>
+                    <a href="DonorMarketplace.html" class="nav-dropdown-trigger active">Donor Marketplace <span class="dropdown-arrow">▾</span></a>
                     <div class="nav-dropdown-menu">
-                        <a href="#heroBanner">The Heart of The Building: Prayer Hall</a>
+                        <a href="DonorMarketplace.html">Prayer Hall</a>
+                        <a href="RoomCatalogue.html">Room Catalogue</a>
                     </div>
                 </div>
-                <a href="https://www.nuecesmosque.com/reconstruction?utm_source=Newsletter&utm_medium=email&utm_campaign=Stock+&utm_content=Stock+Donation+Newsletter#donate" class="nav-cta" target="_blank">Donate</a>
+                <a href="https://www.nuecesmosque.com/reconstruction?utm_source=Newsletter&utm_medium=email&utm_campaign=Stock+&utm_content=Stock+Donation+Newsletter#donate" class="nav-cta">Donate</a>
             </div>
             <a href="https://blkube.com" target="_blank" class="nav-powered">Powered by Blkube Studio</a>
         </nav>
@@ -2950,7 +2980,7 @@
                 </a>
                 <button class="cta-btn cta-primary start-campaign-btn">
                     <img src="https://i.imgur.com/NfvLZ1a.png" alt="" class="cta-btn-icon" style="width: 120px; height: 120px;">
-                    <span class="cta-btn-title">Start Campaign</span>
+                                        <span class="cta-btn-title">Start Campaign</span>
                     <span class="cta-btn-subtitle">Rally Support</span>
                     <span class="coming-soon-tooltip">Coming Soon</span>
                 </button>
@@ -3122,11 +3152,19 @@
                         <a href="#heroBanner" class="story-donate-btn">
                             Secure Your Akhira — Give Now
                         </a>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    
+    <!-- Modal - placed outside all sections for proper fixed positioning -->
+    <div id="modal" class="modal">
+        <div class="modal-content" id="modalContent">
+            <!-- Will be populated by JavaScript -->
+        </div>
+    </div>
 
     <script>
         // Ayah Parallax Reveal
@@ -3155,10 +3193,12 @@
         const imageRevealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    // Delay the reveal for more impact
                     revealTimeout = setTimeout(() => {
                         comparisonAfter.classList.add('revealed');
                     }, 1500);
                 } else {
+                    // Clear any pending timeout and remove revealed class
                     clearTimeout(revealTimeout);
                     comparisonAfter.classList.remove('revealed');
                 }
@@ -3169,12 +3209,71 @@
         
         imageRevealObserver.observe(comparisonContainer);
         
+        // Parallax scroll effect for Prayer Hall Details
+        const prayerHallSection = document.getElementById('prayerHallDetails');
+        
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const sectionTop = prayerHallSection.offsetTop;
+            const windowHeight = window.innerHeight;
+            
+            // Calculate how far into the section we've scrolled
+            if (scrolled + windowHeight > sectionTop) {
+                const parallaxOffset = (scrolled + windowHeight - sectionTop) * 0.3;
+                prayerHallSection.style.transform = `translateY(${Math.min(parallaxOffset, 100)}px)`;
+            }
+        });
+        
+        // Animated number counter
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const startTime = performance.now();
+            const isPrice = target.includes('$') || target.includes('M');
+            const isSqft = target.includes(',');
+            
+            // Extract numeric value
+            let numericTarget = parseFloat(target.replace(/[$,M]/g, ''));
+            if (target.includes('M')) numericTarget *= 1000000;
+            
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeOut = 1 - Math.pow(1 - progress, 3); // Cubic ease-out
+                const current = start + (numericTarget - start) * easeOut;
+                
+                if (target.includes('$') && target.includes('M')) {
+                    element.textContent = '$' + (current / 1000000).toFixed(1) + 'M';
+                } else if (target.includes('$')) {
+                    element.textContent = '$' + Math.floor(current).toLocaleString();
+                } else if (isSqft) {
+                    element.textContent = Math.floor(current).toLocaleString();
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString();
+                }
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    element.textContent = target;
+                }
+            }
+            
+            requestAnimationFrame(update);
+        }
+        
         // Scroll-triggered animations using Intersection Observer
         const scrollRevealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('revealed');
+                    
+                    // Trigger counter animation for stat values
+                    const statValues = entry.target.querySelectorAll('.detail-card-stat-value');
+                    statValues.forEach(stat => {
+                        animateCounter(stat, stat.dataset.target || stat.textContent, 1500);
+                    });
                 } else {
+                    // Remove revealed class when leaving viewport to re-animate on return
                     entry.target.classList.remove('revealed');
                 }
             });
@@ -3187,19 +3286,29 @@
         document.addEventListener('DOMContentLoaded', () => {
             const scrollElements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale');
             scrollElements.forEach(el => scrollRevealObserver.observe(el));
+            
+            // Store original values for stat counters
+            document.querySelectorAll('.detail-card-stat-value').forEach(stat => {
+                stat.dataset.target = stat.textContent;
+            });
         });
         
-        // Capacity Animation
+        // Capacity and Multiplier Animation Observer
+        // (prayerHallDetailsSection already declared above)
+        
         function animateCapacityNumbers() {
             const duration = 2000;
             const steps = 60;
             const stepDuration = duration / steps;
             
+            // Capacity numbers
             const capacityFrom = document.getElementById('capacityFrom');
             const capacityTo = document.getElementById('capacityTo');
             
+            // Keep 150 static
             capacityFrom.textContent = '150';
             
+            // Animate 600 starting from 150
             let current600 = 150;
             const increment600 = (600 - 150) / steps;
             const interval600 = setInterval(() => {
@@ -3231,6 +3340,45 @@
         
         capacityObserver.observe(document.getElementById('comparisonContainer'));
         
+        const rooms = [
+            // Featured
+            { name: "Prayer Hall", sqft: 3538, totalCost: 2431617.58, image: "https://i.imgur.com/1D1LLqa.png", floor: "1F", hardCost: 1706110.18, softCost: 174665.12, gcContingency: 162120.68, ownerContingency: 215436.55, ffe: 173285.05, featured: true, additionalImages: [{ url: "https://i.imgur.com/HzNDKHB.jpg", label: "Mihrab" }, { url: "https://i.imgur.com/Xq6I6gG.jpg", label: "Sisters Alcove" }], prayerSpots: 600 },
+            // Active
+            { name: "Imam's Office", sqft: 163, totalCost: 112027.60, image: "https://i.imgur.com/lerhB4W.jpg", floor: "1F", hardCost: 78602.59, softCost: 8047.04, gcContingency: 7469.10, ownerContingency: 9925.43, ffe: 7983.45 },
+            { name: "Exec Office", sqft: 151, totalCost: 103780.17, image: "https://i.imgur.com/4UXicwV.jpg", floor: "1F", hardCost: 72815.90, softCost: 7454.62, gcContingency: 6919.23, ownerContingency: 9194.72, ffe: 7395.72 },
+            { name: "Brothers' Wudu", sqft: 323, totalCost: 221993.35, image: "https://i.imgur.com/H0dPK5f.jpg", floor: "1F", hardCost: 155758.50, softCost: 15945.97, gcContingency: 14800.73, ownerContingency: 19668.18, ffe: 15819.98 },
+            // Placeholders
+            { name: "Reception", sqft: 200, totalCost: 137457.18, placeholder: true, floor: "1F" },
+            { name: "Flex Office", sqft: 147, totalCost: 101031.03, placeholder: true, floor: "1F" },
+            { name: "Family Restroom", sqft: 134, totalCost: 92096.31, placeholder: true, floor: "1F" },
+            { name: "Sisters' Restroom", sqft: 371, totalCost: 254983.08, placeholder: true, floor: "1F" },
+            { name: "Sisters' Wudu", sqft: 292, totalCost: 200687.49, placeholder: true, floor: "1F" },
+            { name: "Mothers' Room", sqft: 101, totalCost: 69415.88, placeholder: true, floor: "1F" },
+            { name: "Sisters' Lounge", sqft: 217, totalCost: 149141.04, placeholder: true, floor: "1F" },
+            { name: "Brothers' Restroom", sqft: 467, totalCost: 320962.52, placeholder: true, floor: "1F" },
+            { name: "Outdoor Terrace", sqft: 551, totalCost: 248500.48, placeholder: true, floor: "2F" },
+            { name: "Classroom", sqft: 515, totalCost: 232264.52, placeholder: true, floor: "2F" },
+            { name: "Exec Suite", sqft: 308, totalCost: 138907.71, placeholder: true, floor: "2F" },
+            { name: "Sister's Restroom", sqft: 297, totalCost: 133946.72, placeholder: true, floor: "2F" },
+            { name: "Storage", sqft: 241, totalCost: 108690.77, placeholder: true, floor: "2F" },
+            { name: "Flex Meeting", sqft: 323, totalCost: 145672.70, placeholder: true, floor: "2F" },
+            { name: "Library", sqft: 550, totalCost: 248049.48, placeholder: true, floor: "2F" },
+            { name: "Flex Study Space", sqft: 265, totalCost: 119514.75, placeholder: true, floor: "2F" },
+            { name: "Kitchen", sqft: 375, totalCost: 169124.65, placeholder: true, floor: "2F" },
+            { name: "Brothers' Restroom", sqft: 376, totalCost: 169575.65, placeholder: true, floor: "2F" },
+            { name: "Study Booths", sqft: 192, totalCost: 86591.82, placeholder: true, floor: "2F" },
+            { name: "MP Hall", sqft: 3654, totalCost: 1647950.56, placeholder: true, floor: "2F" }
+        ];
+        
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }).format(amount);
+        }
+        
         // Live donor feed
         const dummyDonors = [
             { name: 'Ahmed K.', initial: 'A', spots: 2, note: 'In loving memory of my grandmother' },
@@ -3251,6 +3399,7 @@
             const feedElement = document.getElementById('donorFeed');
             feedElement.innerHTML = '';
             
+            // Show 3 most recent donors
             for (let i = 0; i < 3; i++) {
                 const donor = dummyDonors[(donorIndex + i) % dummyDonors.length];
                 const spotText = donor.spots === 1 ? '1 spot' : `${donor.spots} spots`;
@@ -3265,14 +3414,16 @@
             }
         }
         
+        // Initialize donor feed
         renderDonorFeed();
         
+        // Rotate donors every 5 seconds
         setInterval(() => {
             donorIndex = (donorIndex + 1) % dummyDonors.length;
             renderDonorFeed();
         }, 5000);
         
-        // Animate spots and progress bar
+        // Animate spots and progress bar with Intersection Observer
         const heroSection = document.getElementById('heroBanner');
         const spotsCounter = document.getElementById('spotsCounter');
         const claimedCounter = document.getElementById('claimedCounter');
@@ -3288,6 +3439,7 @@
             const steps = 60;
             const stepDuration = duration / steps;
             
+            // Animate spots remaining counter
             let currentSpots = 0;
             const spotsIncrement = remainingSpots / steps;
             
@@ -3300,6 +3452,7 @@
                 spotsCounter.textContent = Math.round(currentSpots);
             }, stepDuration);
             
+            // Animate claimed counter
             let currentClaimed = 0;
             const claimedIncrement = claimedSpots / steps;
             
@@ -3312,6 +3465,7 @@
                 claimedCounter.textContent = Math.round(currentClaimed);
             }, stepDuration);
             
+            // Animate progress bar fill
             let currentProgress = 0;
             const progressIncrement = percentageFilled / steps;
             
@@ -3345,35 +3499,152 @@
         
         heroObserver.observe(heroSection);
         
-        function openLightbox(url) {
-            event.stopPropagation();
-            document.getElementById('lightboxImage').src = url;
-            document.getElementById('lightbox').classList.add('active');
-            document.body.style.overflow = 'hidden';
+        // Update urgency based on remaining spots
+        function updateSpotsDisplay() {
+            const spotsValue = document.querySelector('.spots-progress-section .hero-stat-value');
+            const spotsLabel = document.querySelector('.spots-progress-section .hero-stat-label');
+            
+            if (remainingSpots < 100) {
+                // High urgency - under 100 spots
+                spotsValue.style.color = '#EF4444'; // Red
+                spotsValue.style.animation = 'urgentPulse 1.5s ease-in-out infinite';
+                spotsLabel.innerHTML = 'Only ' + remainingSpots + ' Spots Left!';
+                
+                // Add urgent badge
+                const urgentBadge = document.createElement('div');
+                urgentBadge.className = 'urgent-badge';
+                urgentBadge.textContent = '⚡ Almost Gone!';
+                urgentBadge.style.cssText = `
+                    background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
+                    color: white;
+                    padding: 0.5rem 1.25rem;
+                    border-radius: 2rem;
+                    font-size: 0.875rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    display: inline-block;
+                    margin-bottom: 0.75rem;
+                    animation: urgencyPulse 2s ease-in-out infinite;
+                    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.5);
+                `;
+                document.querySelector('.spots-progress-section').prepend(urgentBadge);
+            } else if (remainingSpots < 200) {
+                // Medium urgency
+                spotsValue.style.color = '#F59E0B'; // Amber
+            }
         }
         
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-            document.body.style.overflow = '';
+        // CSS for urgent pulse animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes urgentPulse {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Run on load
+        // updateSpotsDisplay(); // Uncomment when spots < 100
+        
+        function claimFullSpot() {
+            // TODO: Redirect to full gift checkout flow
+            alert('Redirecting to Full Gift Checkout ($5,000)');
+            // window.location.href = '/checkout?type=full&amount=5000';
         }
         
-        document.getElementById('lightbox').addEventListener('click', closeLightbox);
+        function splitSpot() {
+            // TODO: Redirect to split spot flow
+            alert('Redirecting to Split Spot Flow - Share with friends/family');
+            // window.location.href = '/split-spot';
+        }
         
-        // Rooms data
-        const rooms = [
-            { name: "Prayer Hall", sqft: 3538, totalCost: 2431617.58, image: "https://i.imgur.com/1D1LLqa.png", floor: "1F", hardCost: 1706110.18, softCost: 174665.12, gcContingency: 162120.68, ownerContingency: 215436.55, ffe: 173285.05, featured: true, additionalImages: [{ url: "https://i.imgur.com/HzNDKHB.jpg", label: "Mihrab" }, { url: "https://i.imgur.com/Xq6I6gG.jpg", label: "Sisters Alcove" }], prayerSpots: 600 },
-            { name: "Imam's Office", sqft: 163, totalCost: 112027.60, image: "https://i.imgur.com/lerhB4W.jpg", floor: "1F", hardCost: 78602.59, softCost: 8047.04, gcContingency: 7469.10, ownerContingency: 9925.43, ffe: 7983.45 },
-            { name: "Exec Office", sqft: 151, totalCost: 103780.17, image: "https://i.imgur.com/4UXicwV.jpg", floor: "1F", hardCost: 72815.90, softCost: 7454.62, gcContingency: 6919.23, ownerContingency: 9194.72, ffe: 7395.72 },
-            { name: "Brothers' Wudu", sqft: 323, totalCost: 221993.35, image: "https://i.imgur.com/H0dPK5f.jpg", floor: "1F", hardCost: 155758.50, softCost: 15945.97, gcContingency: 14800.73, ownerContingency: 19668.18, ffe: 15819.98 }
-        ];
+        function launchCampaign() {
+            // TODO: Redirect to campaign creation flow
+            alert('Redirecting to Campaign Builder - Create your fundraising page');
+            // window.location.href = '/create-campaign';
+        }
         
-        function formatCurrency(amount) {
-            return new Intl.NumberFormat('en-US', {
-                style: 'currency',
-                currency: 'USD',
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-            }).format(amount);
+        function renderFeaturedPrayerHall() {
+            const prayerHall = rooms.find(r => r.featured);
+            const featuredDiv = document.getElementById('featuredPrayerHall');
+            
+            featuredDiv.innerHTML = `
+                <div class="featured-layout">
+                    <div class="featured-image">
+                        <img src="${prayerHall.image}" alt="${prayerHall.name}">
+                        <span class="floor-badge">${prayerHall.floor}</span>
+                    </div>
+                    <div class="featured-content" onclick="openModal(0)">
+                        <h3>${prayerHall.name}</h3>
+                        <div class="featured-meta">
+                            <div class="featured-sqft">${prayerHall.sqft.toLocaleString()} SF</div>
+                            <div class="prayer-spots-available">600 Prayer Spots Available</div>
+                        </div>
+                        <div class="featured-pricing">
+                            <div class="total-investment">${formatCurrency(prayerHall.totalCost)}</div>
+                            <div class="investment-label">Total Investment</div>
+                            <div class="per-spot-price">${formatCurrency(prayerHall.totalCost / 600)} per prayer spot</div>
+                        </div>
+                        <button class="view-details-btn">View Details →</button>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function renderRooms() {
+            const grid = document.getElementById('roomGrid');
+            // Filter out featured room from the main grid
+            const nonFeaturedRooms = rooms.filter(r => !r.featured);
+            
+            grid.innerHTML = nonFeaturedRooms.map((room, index) => {
+                // Adjust index to account for featured room being at position 0
+                const actualIndex = index + 1;
+                
+                if (room.placeholder) {
+                    return `
+                        <div class="placeholder-card">
+                            <div class="placeholder-image">
+                                <div class="placeholder-text">
+                                    <div class="placeholder-title">Investment Opportunity</div>
+                                    <div class="coming-soon">Coming Soon</div>
+                                </div>
+                            </div>
+                            <div class="room-content">
+                                <h3>${room.name}</h3>
+                                <div class="room-meta">
+                                    <span class="room-sqft">${room.sqft} SF · ${room.floor}</span>
+                                </div>
+                                <div class="room-pricing">
+                                    <div class="placeholder-cost">${formatCurrency(room.totalCost)}</div>
+                                    <div class="investment-label">Estimated Investment</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    return `
+                        <div class="room-card" onclick="openModal(${actualIndex})">
+                            <div class="room-image">
+                                <img src="${room.image}" alt="${room.name}">
+                                <span class="room-badge">${room.floor}</span>
+                            </div>
+                            <div class="room-content">
+                                <h3>${room.name}</h3>
+                                <div class="room-meta">
+                                    <span class="room-sqft">${room.sqft} SF</span>
+                                </div>
+                                <div class="room-pricing">
+                                    <div class="room-cost">${formatCurrency(room.totalCost)}</div>
+                                    <div class="investment-label">Total Investment</div>
+                                </div>
+                                <button class="room-btn">View Details →</button>
+                            </div>
+                        </div>
+                    `;
+                }
+            }).join('');
         }
         
         function openModal(index) {
@@ -3482,16 +3753,28 @@
             document.getElementById('modal').classList.remove('active');
         }
         
-        document.getElementById('modal')?.addEventListener('click', (e) => {
+        function openLightbox(url) {
+            event.stopPropagation();
+            document.getElementById('lightboxImage').src = url;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        // Event listeners
+        document.getElementById('modal').addEventListener('click', (e) => {
             if (e.target.id === 'modal') closeModal();
         });
+        
+        document.getElementById('lightbox').addEventListener('click', closeLightbox);
+        
+        // Initialize
+        // renderFeaturedPrayerHall(); // Now hardcoded in HTML
     </script>
-    
-    <!-- Modal -->
-    <div id="modal" class="modal">
-        <div class="modal-content" id="modalContent">
-        </div>
-    </div>
     
     <!-- Footer -->
     <footer class="site-footer">

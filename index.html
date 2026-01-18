@@ -31,7 +31,6 @@
             position: relative;
             width: 100vw;
             height: 100vh;
-            height: 100dvh;
             overflow: hidden;
         }
         
@@ -67,9 +66,7 @@
         .unmute-btn {
             position: absolute;
             bottom: 6rem;
-            bottom: calc(6rem + env(safe-area-inset-bottom));
             left: 2rem;
-            left: calc(2rem + env(safe-area-inset-left));
             z-index: 20;
             padding: 0.5rem 1.25rem;
             background-color: transparent;
@@ -82,11 +79,9 @@
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            -webkit-tap-highlight-color: transparent;
         }
         
-        .unmute-btn:hover,
-        .unmute-btn:active {
+        .unmute-btn:hover {
             background-color: rgba(255, 255, 255, 0.1);
             border-color: rgba(255, 255, 255, 0.6);
             color: white;
@@ -96,9 +91,7 @@
         .blkube-link {
             position: absolute;
             top: 1.5rem;
-            top: calc(1.5rem + env(safe-area-inset-top));
             right: 1.5rem;
-            right: calc(1.5rem + env(safe-area-inset-right));
             z-index: 20;
             font-size: 0.7rem;
             color: rgba(255, 255, 255, 0.5);
@@ -121,8 +114,6 @@
             justify-content: center;
             height: 100%;
             padding: 0 1.5rem;
-            padding-top: env(safe-area-inset-top);
-            padding-bottom: env(safe-area-inset-bottom);
         }
         
         .logo-container {
@@ -152,7 +143,6 @@
         .swipe-indicator {
             position: absolute;
             bottom: 2rem;
-            bottom: calc(2rem + env(safe-area-inset-bottom));
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -198,7 +188,7 @@
             }
         }
         
-        /* Mobile - iPhone/iPad */
+        /* Mobile */
         @media (max-width: 768px) {
             .logo-container img {
                 max-width: 85vw;
@@ -206,9 +196,7 @@
             
             .unmute-btn {
                 bottom: 5rem;
-                bottom: calc(5rem + env(safe-area-inset-bottom));
                 left: 1rem;
-                left: calc(1rem + env(safe-area-inset-left));
                 font-size: 0.6rem;
                 padding: 0.4rem 1rem;
             }
@@ -220,29 +208,6 @@
             .swipe-arrow {
                 width: 20px;
                 height: 20px;
-            }
-        }
-        
-        /* iPad Landscape */
-        @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-            .logo-container img {
-                max-width: 50vw;
-            }
-        }
-        
-        /* iPhone SE and smaller */
-        @media (max-width: 375px) {
-            .logo-container img {
-                max-width: 80vw;
-            }
-            
-            .swipe-text {
-                font-size: 0.55rem;
-            }
-            
-            .unmute-btn {
-                font-size: 0.55rem;
-                padding: 0.35rem 0.8rem;
             }
         }
     </style>
@@ -306,7 +271,7 @@
             }
         }
         
-        // Touch swipe detection for mobile
+        // Optional: Add scroll/swipe detection to navigate
         let touchStartY = 0;
         document.addEventListener('touchstart', (e) => {
             touchStartY = e.touches[0].clientY;
