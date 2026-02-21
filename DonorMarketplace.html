@@ -731,20 +731,22 @@
         .hero-badge {
             background: linear-gradient(135deg, #BF5700 0%, #D96C00 100%);
             color: white;
-            padding: 1rem 2.5rem;
+            padding: 0.75rem 2rem;
             border-radius: 3rem;
-            font-size: clamp(1rem, 2.5vw, 1.5rem);
-            font-weight: 900;
+            font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 40px rgba(191, 87, 0, 0.6);
+            letter-spacing: 0.1em;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 6px 25px rgba(191, 87, 0, 0.5);
             font-family: 'Montserrat', sans-serif;
             position: relative;
             overflow: hidden;
-            min-width: 420px;
-            display: inline-block;
-            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 2.5rem;
         }
         
         /* CTA Buttons */
@@ -754,6 +756,61 @@
             margin-top: 2.5rem;
             flex-wrap: wrap;
             justify-content: center;
+        }
+        
+        .cta-buttons-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .cta-buttons-row {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .cta-btn-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem 2.5rem;
+            border-radius: 3rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        .cta-btn-bar:hover {
+            background: white;
+            color: #BF5700;
+            border-color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+        }
+        
+        .cta-btn-bar .cta-btn-title {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            font-weight: 700;
+        }
+        
+        .cta-btn-bar .cta-btn-subtitle {
+            font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+            opacity: 0.85;
         }
         
         .cta-btn {
@@ -833,10 +890,10 @@
         .hero-badge::before {
             content: '✦';
             position: absolute;
-            right: 1rem;
+            right: 0.75rem;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 1.25rem;
+            font-size: 0.8rem;
             color: rgba(255, 255, 255, 0.9);
             animation: sparkle 2s ease-in-out infinite;
             z-index: 2;
@@ -2874,8 +2931,7 @@
         /* Coming Soon Tooltip */
         .start-campaign-btn {
             position: relative;
-            cursor: default;
-            opacity: 0.7;
+            cursor: pointer;
         }
         .coming-soon-tooltip {
             position: absolute;
@@ -2982,18 +3038,31 @@
             
             <!-- CTA Buttons -->
             <div class="cta-buttons" id="sponsorButtons">
-                <a href="https://www.nuecesmosque.com/reconstruction?utm_source=Newsletter&utm_medium=email&utm_campaign=Stock+&utm_content=Stock+Donation+Newsletter#donate" class="cta-btn cta-primary pulse-btn" style="text-decoration: none;">
+                <button onclick="openDonateModal()" class="cta-btn cta-primary pulse-btn" style="text-decoration: none; border: none; cursor: pointer;">
                     <img src="https://i.imgur.com/iNiSl9J.png" alt="" class="cta-btn-icon">
                     <span class="cta-btn-title">Gift Full Spot</span>
                     <span class="cta-btn-subtitle">$5,000</span>
-                </a>
-                <button class="cta-btn cta-primary start-campaign-btn">
+                </button>
+                <button onclick="openMultipleSpots()" class="cta-btn cta-primary" style="cursor: pointer; min-width: 220px; min-height: 220px;">
+                    <div style="position: relative; display: inline-block;">
+                        <img src="https://i.imgur.com/iNiSl9J.png" alt="" class="cta-btn-icon">
+                        <span style="position: absolute; top: -8px; right: -8px; background: white; color: #BF5700; font-size: 1rem; font-weight: 900; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">2+</span>
+                    </div>
+                    <span class="cta-btn-title">Multiply Your Impact</span>
+                    <span class="cta-btn-subtitle">Gift 2+ Spots</span>
+                </button>
+                <button onclick="window.open('https://www.launchgood.com/create#!/create/new/basics?raising_for=community&community_id=20305', '_blank')" class="cta-btn cta-primary start-campaign-btn" style="cursor: pointer;">
                     <img src="https://i.imgur.com/NfvLZ1a.png" alt="" class="cta-btn-icon" style="width: 120px; height: 120px;">
                                         <span class="cta-btn-title">Start Campaign</span>
                     <span class="cta-btn-subtitle">Rally Support</span>
-                    <span class="coming-soon-tooltip">Coming Soon</span>
                 </button>
             </div>
+            
+            <!-- Give Any Amount Bar Button -->
+            <button onclick="openGeneralDonation()" class="cta-btn-bar" style="margin-top: 1.5rem; margin-bottom: 2rem;">
+                <span class="cta-btn-title">Give Any Amount</span>
+                <span class="cta-btn-subtitle">— Every Dollar Counts —</span>
+            </button>
         </div>
     </div>
     
@@ -3783,6 +3852,91 @@
         
         // Initialize
         // renderFeaturedPrayerHall(); // Now hardcoded in HTML
+    </script>
+    
+    <!-- Donate Modal -->
+    <div id="donateModal" class="modal">
+        <div class="modal-content" style="max-width: 550px; margin-top: 2rem;">
+            <div class="modal-header">
+                <div>
+                    <h2 class="modal-title">Gift a Prayer Spot</h2>
+                    <p class="modal-subtitle">Secure Your Legacy in the Heart of the Masjid</p>
+                </div>
+                <button class="modal-close" onclick="closeDonateModal()">
+                    <span>×</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding: 0; height: 650px;">
+                <iframe 
+                    src="https://charitystack.com/donate/3273fe9e-daba-4d41-a3d0-979b6f7bd0a8" 
+                    style="width: 100%; height: 100%; border: none;"
+                    allow="payment; clipboard-write"
+                    allowpaymentrequest="true"
+                    title="Donate via CharityStack"
+                ></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Donate Modal Functions
+        function openDonateModal() {
+            // Open CharityStack in a centered popup window
+            var width = 500;
+            var height = 700;
+            var left = (screen.width - width) / 2;
+            var top = (screen.height - height) / 2;
+            window.open(
+                'https://charitystack.com/donate/3273fe9e-daba-4d41-a3d0-979b6f7bd0a8',
+                'Donate',
+                'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top + ',scrollbars=yes'
+            );
+        }
+        
+        function openGeneralDonation() {
+            // Open CharityStack in a centered popup window for general donations
+            var width = 500;
+            var height = 700;
+            var left = (screen.width - width) / 2;
+            var top = (screen.height - height) / 2;
+            window.open(
+                'https://charitystack.com/donate/3273fe9e-daba-4d41-a3d0-979b6f7bd0a8',
+                'Donate',
+                'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top + ',scrollbars=yes'
+            );
+        }
+        
+        function openMultipleSpots() {
+            // Open CharityStack in a centered popup window for multiple spots
+            var width = 500;
+            var height = 700;
+            var left = (screen.width - width) / 2;
+            var top = (screen.height - height) / 2;
+            window.open(
+                'https://charitystack.com/donate/f0762c8b-5742-49f9-b1b4-fa8e8feaff03',
+                'Donate',
+                'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top + ',scrollbars=yes'
+            );
+        }
+        
+        function closeDonateModal() {
+            document.getElementById('donateModal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        
+        // Close modal on background click
+        document.getElementById('donateModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeDonateModal();
+            }
+        });
+        
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeDonateModal();
+            }
+        });
     </script>
     
     <!-- Footer -->
