@@ -414,26 +414,17 @@
     <script>
         const rooms = [
             // Featured - Full Width
-            { name: "Mufti Umer Education Hall", sqft: 3654, totalCost: 1647950.56, image: "https://i.imgur.com/YPLjGNw.jpg", floor: "2F", featured: true, hardCost: 0, softCost: 0, gcContingency: 0, ownerContingency: 0, ffe: 0, additionalImages: [] },
-            // Ordered by cost: highest to lowest
-            { name: "Library", sqft: 550, totalCost: 248049.48, image: "https://i.imgur.com/3BGkGYf.jpg", floor: "2F", hardCost: 0, softCost: 0, gcContingency: 0, ownerContingency: 0, ffe: 0, additionalImages: [] },
-            { name: "Seminary Room", sqft: 515, totalCost: 232264.52, image: "https://i.imgur.com/tqmmuV9.jpg", floor: "2F", hardCost: 0, softCost: 0, gcContingency: 0, ownerContingency: 0, ffe: 0, additionalImages: [] },
-            { name: "Brothers' Wudu", sqft: 323, totalCost: 221993.35, image: "https://i.imgur.com/ZSRuSGU.jpg", floor: "1F", hardCost: 155758.50, softCost: 15945.97, gcContingency: 14800.73, ownerContingency: 19668.18, ffe: 15819.98, additionalImages: [] },
-            { name: "Sisters' Wudu", sqft: 292, totalCost: 200687.49, image: "https://i.imgur.com/k4VC6yp.jpg", floor: "1F", hardCost: 0, softCost: 0, gcContingency: 0, ownerContingency: 0, ffe: 0, additionalImages: [] },
-            { name: "Student Leadership Suite", sqft: 308, totalCost: 138907.71, image: "https://i.imgur.com/i8TMkyy.jpg", floor: "2F", hardCost: 0, softCost: 0, gcContingency: 0, ownerContingency: 0, ffe: 0, additionalImages: [] },
-            { name: "Imam's Office", sqft: 163, totalCost: 112027.60, image: "https://i.imgur.com/lerhB4W.jpg", floor: "1F", hardCost: 78602.59, softCost: 8047.04, gcContingency: 7469.10, ownerContingency: 9925.43, ffe: 7983.45, additionalImages: [] },
-            { name: "Exec Office", sqft: 151, totalCost: 103780.17, image: "https://i.imgur.com/4UXicwV.jpg", floor: "1F", hardCost: 72815.90, softCost: 7454.62, gcContingency: 6919.23, ownerContingency: 9194.72, ffe: 7395.72, additionalImages: [] },
-            { name: "Study Booths", sqft: 192, totalCost: 86591.82, image: "https://i.imgur.com/W3HDVQ0.jpg", floor: "2F", hardCost: 0, softCost: 0, gcContingency: 0, ownerContingency: 0, ffe: 0, additionalImages: [] }
+            { name: "Mufti Umer Education Hall", sqft: 3654, image: "https://i.imgur.com/YPLjGNw.jpg", floor: "2F", featured: true, description: "A grand space dedicated to Islamic scholarship, where knowledge flows freely and hearts are transformed through the timeless teachings of our faith." },
+            // Other rooms
+            { name: "Library", sqft: 550, image: "https://i.imgur.com/3BGkGYf.jpg", floor: "2F", description: "A sanctuary of wisdom where seekers of knowledge discover the treasures of Islamic literature and scholarly works." },
+            { name: "Seminary Room", sqft: 515, image: "https://i.imgur.com/tqmmuV9.jpg", floor: "2F", description: "Where future scholars begin their journey, nurturing the next generation of Islamic leaders and teachers." },
+            { name: "Brothers' Wudu", sqft: 323, image: "https://i.imgur.com/ZSRuSGU.jpg", floor: "1F", description: "A place of purification where worshippers prepare their hearts and bodies for standing before Allah." },
+            { name: "Sisters' Wudu", sqft: 292, image: "https://i.imgur.com/k4VC6yp.jpg", floor: "1F", description: "A serene space designed for our sisters to prepare for prayer in comfort and dignity." },
+            { name: "Student Leadership Suite", sqft: 308, image: "https://i.imgur.com/i8TMkyy.jpg", floor: "2F", description: "Empowering young Muslim leaders with the space and resources to serve their community." },
+            { name: "Imam's Office", sqft: 163, image: "https://i.imgur.com/lerhB4W.jpg", floor: "1F", description: "The spiritual heart of guidance, where our Imam counsels, teaches, and supports the community." },
+            { name: "Exec Office", sqft: 151, image: "https://i.imgur.com/4UXicwV.jpg", floor: "1F", description: "Where administrative excellence meets community service, ensuring the masjid runs smoothly." },
+            { name: "Study Booths", sqft: 192, image: "https://i.imgur.com/W3HDVQ0.jpg", floor: "2F", description: "Quiet corners for deep reflection, study, and personal connection with sacred knowledge." }
         ];
-
-        function formatCurrency(amount) {
-            return new Intl.NumberFormat('en-US', {
-                style: 'currency',
-                currency: 'USD',
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-            }).format(amount);
-        }
 
         function renderRooms() {
             const grid = document.getElementById('room-grid');
@@ -452,16 +443,13 @@
                                     </div>
                                 </div>
                                 <div style="padding: 2rem; display: flex; flex-direction: column; justify-content: center;">
+                                    <div style="font-size: 0.875rem; font-weight: 600; color: #BF5700; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Featured Space</div>
                                     <h3 style="font-size: 2.5rem; font-weight: 900; color: #1f2937; margin-bottom: 1rem;">${room.name}</h3>
                                     <div style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 2px solid #FFE8DC;">
-                                        <div style="font-size: 1rem; font-weight: 600; color: #6b7280; margin-bottom: 0.5rem;">${room.sqft.toLocaleString()} SF</div>
-                                        <div style="font-size: 0.875rem; font-weight: 600; color: #BF5700;">Featured Sponsorship Opportunity</div>
+                                        <div style="font-size: 1rem; font-weight: 600; color: #6b7280;">${room.sqft.toLocaleString()} SF</div>
                                     </div>
-                                    <div style="margin-bottom: 2rem;">
-                                        <div style="font-size: 3rem; font-weight: 900; color: #BF5700; margin-bottom: 0.5rem;">${formatCurrency(room.totalCost)}</div>
-                                        <div style="font-size: 0.875rem; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500;">Total Investment</div>
-                                    </div>
-                                    <button style="width: 100%; padding: 1rem 1.5rem; background: linear-gradient(135deg, #BF5700 0%, #D96C00 100%); color: white; border: none; border-radius: 0.75rem; font-weight: 700; font-size: 1.125rem; cursor: pointer;">View Details →</button>
+                                    <p style="font-size: 1.125rem; color: #374151; line-height: 1.7; margin-bottom: 2rem; font-style: italic;">"${room.description}"</p>
+                                    <button style="width: 100%; padding: 1rem 1.5rem; background: linear-gradient(135deg, #BF5700 0%, #D96C00 100%); color: white; border: none; border-radius: 0.75rem; font-weight: 700; font-size: 1.125rem; cursor: pointer;">Learn More →</button>
                                 </div>
                             </div>
                         </div>
@@ -472,19 +460,13 @@
                         <div class="room-card-placeholder">
                             <div class="room-image-placeholder">
                                 <div style="text-align: center;">
-                                    <div style="font-size: 1.5rem; font-weight: 900; color: #9ca3af; margin-bottom: 0.5rem;">Investment Opportunity</div>
-                                    <div style="font-size: 1.125rem; font-weight: 700; color: #BF5700;">Coming Soon</div>
+                                    <div style="font-size: 1.5rem; font-weight: 900; color: #9ca3af; margin-bottom: 0.5rem;">Coming Soon</div>
+                                    <div style="font-size: 1.125rem; font-weight: 700; color: #BF5700;">Details Available Shortly</div>
                                 </div>
                             </div>
                             <div style="padding: 1.5rem;">
                                 <h3 style="font-size: 1.5rem; font-weight: 900; color: #1f2937; margin-bottom: 0.75rem;">${room.name}</h3>
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 2px solid #FFE8DC;">
-                                    <span style="font-size: 0.875rem; font-weight: 600; color: #6b7280;">${room.sqft} SF · ${room.floor}</span>
-                                </div>
-                                <div style="margin-bottom: 1.5rem;">
-                                    <div style="font-size: 1.875rem; font-weight: 900; color: #9ca3af; margin-bottom: 0.25rem;">${formatCurrency(room.totalCost)}</div>
-                                    <div style="font-size: 0.75rem; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500;">Estimated Investment</div>
-                                </div>
+                                <div style="font-size: 0.875rem; font-weight: 600; color: #6b7280;">${room.sqft} SF · ${room.floor}</div>
                             </div>
                         </div>
                     `;
@@ -499,15 +481,10 @@
                                 </div>
                             </div>
                             <div style="padding: 1.5rem;">
-                                <h3 style="font-size: 1.5rem; font-weight: 900; color: #1f2937; margin-bottom: 0.75rem;">${room.name}</h3>
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 2px solid #FFE8DC;">
-                                    <span style="font-size: 0.875rem; font-weight: 600; color: #6b7280;">${room.sqft} SF</span>
-                                </div>
-                                <div style="margin-bottom: 1.5rem;">
-                                    <div style="font-size: 1.875rem; font-weight: 900; color: #BF5700; margin-bottom: 0.25rem;">${formatCurrency(room.totalCost)}</div>
-                                    <div style="font-size: 0.75rem; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500;">Total Investment</div>
-                                </div>
-                                <button style="width: 100%; padding: 0.75rem 1rem; background: linear-gradient(135deg, #BF5700 0%, #D96C00 100%); color: white; border: none; border-radius: 0.75rem; font-weight: 700; cursor: pointer;">View Details →</button>
+                                <h3 style="font-size: 1.5rem; font-weight: 900; color: #1f2937; margin-bottom: 0.5rem;">${room.name}</h3>
+                                <div style="font-size: 0.875rem; font-weight: 600; color: #6b7280; margin-bottom: 1rem;">${room.sqft} SF</div>
+                                <p style="font-size: 0.9rem; color: #374151; line-height: 1.6; margin-bottom: 1.5rem; font-style: italic;">"${room.description}"</p>
+                                <button style="width: 100%; padding: 0.75rem 1rem; background: linear-gradient(135deg, #BF5700 0%, #D96C00 100%); color: white; border: none; border-radius: 0.75rem; font-weight: 700; cursor: pointer;">Learn More →</button>
                             </div>
                         </div>
                     `;
@@ -551,23 +528,6 @@
                     </div>
                 `;
             }
-
-            let prayerSpotInfo = '';
-            if (room.prayerSpots) {
-                prayerSpotInfo = `
-                    <div style="padding: 1.5rem; border-radius: 0.75rem; background: linear-gradient(135deg, #FFF5F0 0%, #FFE8DC 100%); border: 2px solid #BF5700; margin-bottom: 1.5rem;">
-                        <h3 style="font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #BF5700; margin-bottom: 1rem;">Prayer Spot Investment</h3>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-                            <span style="color: #1f2937; font-weight: 600;">Available Prayer Spots</span>
-                            <span style="font-size: 1.5rem; font-weight: 900; color: #BF5700;">${room.prayerSpots}</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 0.75rem; border-top: 2px solid #BF5700;">
-                            <span style="color: #1f2937; font-weight: 600;">Cost per Prayer Spot</span>
-                            <span style="font-size: 1.5rem; font-weight: 900; color: #BF5700;">${formatCurrency(room.totalCost / room.prayerSpots)}</span>
-                        </div>
-                    </div>
-                `;
-            }
             
             modalContent.innerHTML = `
                 <div style="position: sticky; top: 0; background: linear-gradient(to right, #FFFFFF 0%, #FFF8F5 100%); padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #BF5700; border-radius: 1rem 1rem 0 0; z-index: 10;">
@@ -588,37 +548,9 @@
                             ${additionalImagesHTML}
                         </div>
                         <div>
-                            ${prayerSpotInfo}
                             <div style="padding: 1.5rem; border-radius: 0.75rem; background: linear-gradient(135deg, #FFF5F0 0%, #FFE8DC 100%); border: 2px solid #BF5700; margin-bottom: 1.5rem;">
-                                <h3 style="font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #BF5700; margin-bottom: 1rem;">Investment Breakdown</h3>
-                                <div style="border-bottom: 2px solid #BF5700; padding-bottom: 0.75rem; margin-bottom: 0.75rem;">
-                                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                                        <span style="color: #1f2937; font-weight: 600;">Total Investment</span>
-                                        <span style="font-size: 1.5rem; font-weight: 900; color: #BF5700;">${formatCurrency(room.totalCost)}</span>
-                                    </div>
-                                </div>
-                                ${room.hardCost > 0 ? `
-                                <div style="display: flex; justify-content: space-between; padding: 0.5rem 0;">
-                                    <span style="color: #374151; font-size: 0.875rem; font-weight: 500;">Construction Hard Cost</span>
-                                    <span style="font-weight: 600; color: #1f2937;">${formatCurrency(room.hardCost)}</span>
-                                </div>
-                                <div style="display: flex; justify-content: space-between; padding: 0.5rem 0;">
-                                    <span style="color: #374151; font-size: 0.875rem; font-weight: 500;">Construction Soft Cost</span>
-                                    <span style="font-weight: 600; color: #1f2937;">${formatCurrency(room.softCost)}</span>
-                                </div>
-                                <div style="display: flex; justify-content: space-between; padding: 0.5rem 0;">
-                                    <span style="color: #374151; font-size: 0.875rem; font-weight: 500;">GC Contingency</span>
-                                    <span style="font-weight: 600; color: #1f2937;">${formatCurrency(room.gcContingency)}</span>
-                                </div>
-                                <div style="display: flex; justify-content: space-between; padding: 0.5rem 0;">
-                                    <span style="color: #374151; font-size: 0.875rem; font-weight: 500;">Owner Contingency</span>
-                                    <span style="font-weight: 600; color: #1f2937;">${formatCurrency(room.ownerContingency)}</span>
-                                </div>
-                                <div style="display: flex; justify-content: space-between; padding: 0.5rem 0;">
-                                    <span style="color: #374151; font-size: 0.875rem; font-weight: 500;">FF&E</span>
-                                    <span style="font-weight: 600; color: #1f2937;">${formatCurrency(room.ffe)}</span>
-                                </div>
-                                ` : ''}
+                                <h3 style="font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #BF5700; margin-bottom: 1rem;">About This Space</h3>
+                                <p style="font-size: 1.125rem; color: #374151; line-height: 1.8; font-style: italic;">"${room.description}"</p>
                             </div>
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                                 <div style="padding: 1.25rem; border-radius: 0.75rem; text-align: center; background: linear-gradient(135deg, #BF5700 0%, #D96C00 100%);">
